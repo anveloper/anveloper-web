@@ -9,9 +9,11 @@
 }
 
 .themeBtn {
+  font-family: "NotoSansKR", sans-serif;
   color: var(--text-primary);
   background-color: var(--background);
   border: 2px var(--text-primary) solid;
   float: right;
   transition: all 0.5s;
 }
+
