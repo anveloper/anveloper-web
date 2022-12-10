@@ -7,3 +7,4 @@
   - npm install --save-dev typescript @types/react @types/react-dom @types/node
   - npm install redux react-redux next-redux-wrapper
   - npm install -d redux-devtools-extension @types/next-redux-wrapper @types/react-redux
+  - npm install redux-persist

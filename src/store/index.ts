@@ -4,37 +4,38 @@ import {
   ThunkAction,
 } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
-import {
-  Action,
-  AnyAction,
-  applyMiddleware,
-  Middleware,
-  Reducer,
-  StoreEnhancer,
-} from "redux";
+import { Action, AnyAction, Reducer } from "redux";
 import logger from "redux-logger";
 import rootReducer, { ReducerStates } from "./reducers";
 
-const bindMiddleware = (middleware: Middleware[]): StoreEnhancer => {
-  if (process.env.NODE_ENV !== "production") {
-    const { composeWithDevTools } = require("redux-devtools-extension");
-    return composeWithDevTools(applyMiddleware(...middleware));
-  }
-  return applyMiddleware(...middleware);
+import { persistReducer, persistStore } from "redux-persist";
+import storageSession from "redux-persist/lib/storage/session";
+
+const persistConfig = {
+  key: "root",
+  storage: storageSession,
+  version: 1,
+  whitelist: ["counter"],
 };
 
-const makeStore = () => {
-  const middleware = getDefaultMiddleware();
-  if (process.env.NODE_ENV === "development") {
-    middleware.push(logger);
-  }
-  const store = configureStore({
-    reducer: rootReducer as Reducer<ReducerStates, AnyAction>,
-    middleware,
-    devTools: process.env.NODE_ENV === "development",
-  });
-  return store;
-};
+const persistedReducer = persistReducer(
+  persistConfig,
+  rootReducer as Reducer<ReducerStates, AnyAction>
+);
+
+const middleware = getDefaultMiddleware();
+if (process.env.NODE_ENV === "development") {
+  middleware.push(logger);
+}
+
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware,
+  devTools: process.env.NODE_ENV === "development",
+});
+
+const makeStore = () => store;
+export const persistor = persistStore(store);
 
 export type AppStore = ReturnType<typeof makeStore>;
 export type RootState = ReturnType<typeof rootReducer>;
