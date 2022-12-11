@@ -1,0 +1,15 @@
+.footer {
+  color: gray;
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px;
+  flex-direction: row;
+  align-items: center;
+}
