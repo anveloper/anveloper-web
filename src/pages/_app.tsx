@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -9,9 +10,12 @@ const App = ({ Component, ...rest }: AppProps) => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Component {...props.pageProps} />
+        <ThemeProvider attribute="class">
+          <Component {...props.pageProps} />
+        </ThemeProvider>
       </PersistGate>
     </Provider>
   );
 };
+
 export default App;
