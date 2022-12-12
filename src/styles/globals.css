@@ -43,37 +43,61 @@ button {
   border: none;
 }
 
+:root {
+  --background: #f9fafa;
+  --foreground: #2f4858;
+
+  --screen-xs: 0;
+  --screen-sm: 576px;
+  --screen-md: 768px;
+  --screen-lg: 992px;
+  --screen-xl: 1200px;
+  --screen-xxl: 1400px;
+
+  /* primary */
+  --primary-color-blue: #2c67ff;
+  --primary-color-dark: #122045;
+  --secondary-color-light-blue: #dfe6fb;
+  --secondary-color-medium-blue: #5c8aff;
+  --secondary-color-system-blue: #0891f2;
+  --secondary-color-dark-blue: #055eea;
+  /* system */
+  --system-color-light-red: #fff2f9;
+  --system-color-orange: #f57227;
+  --system-color-pink: #fe647c;
+  --system-color-red: #fe3d00;
+  --system-color-light-yellow: #fff9de;
+  --system-color-yellow: #feba00;
+  --system-color-light-green: #ebf9f1;
+  --system-color-green: #3bc171;
+  --system-color-light-purple: #f2efff;
+  --system-color-purple: #7b61fe;
+  /* neutral */
+  --neutral-white: #fafafc;
+  --neutral-lightness: #f2f5f9;
+  --neutral-light: #ced3d6;
+  --neutral-medium: #bdc5ca;
+  --neutral-gray: #a1acb3;
+  --neutral-metal: #88929f;
+  --neutral-dark-gray: #444657;
+  --light-blue-600: #039be5;
+  --light-blue-900: #01579b;
+  --light-blue-A200: #40c4ff;
+  --light-blue-A400: #00b0ff;
+  --black-overlay: #00000066;
+}
+
+[data-theme="dark"] {
+  --background: #2f4858;
+  --foreground: #f9fafa;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color: #f9fafa;
+    background: #2f4858;
   }
 } */
-
-:root {
-  /* Your default theme */
-  --background: #009994;
-  --foreground: #2f4858;
-
-  --primary-color-a: #faff5b;
-  --primary-color-b: #92e475;
-  --primary-color-c: #2ec18e;
-  --primary-color-d: #009994;
-  --primary-color-e: #046f81;
-  --primary-color-f: #2f4858;
-}
-
-[data-theme="dark"] {
-  --background: #2f4858;
-  --foreground: #009994;
-
-  --primary-color-a: #2f4858;
-  --primary-color-b: #046f81;
-  --primary-color-c: #009994;
-  --primary-color-d: #2ec18e;
-  --primary-color-e: #92e475;
-  --primary-color-f: #faff5b;
-}
