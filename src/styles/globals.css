@@ -55,11 +55,25 @@ button {
 
 :root {
   /* Your default theme */
-  --background: white;
-  --foreground: black;
+  --background: #009994;
+  --foreground: #2f4858;
+
+  --primary-color-a: #faff5b;
+  --primary-color-b: #92e475;
+  --primary-color-c: #2ec18e;
+  --primary-color-d: #009994;
+  --primary-color-e: #046f81;
+  --primary-color-f: #2f4858;
 }
 
 [data-theme="dark"] {
-  --background: black;
-  --foreground: white;
+  --background: #2f4858;
+  --foreground: #009994;
+
+  --primary-color-a: #2f4858;
+  --primary-color-b: #046f81;
+  --primary-color-c: #009994;
+  --primary-color-d: #2ec18e;
+  --primary-color-e: #92e475;
+  --primary-color-f: #faff5b;
 }

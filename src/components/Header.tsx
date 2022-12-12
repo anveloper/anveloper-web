@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/components/Header.module.css";
-import DarkToggleButton from "./DarkToggleButton";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
         <Link href={"/"}>홈</Link>
         <Link href={"/projects"}>프로젝트</Link>
         <a href={"/asdf"}>연락하기</a>
-        <DarkToggleButton />
+        <ThemeToggle />
       </div>
     </header>
   );
