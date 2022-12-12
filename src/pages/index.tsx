@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Content from "../components/home/Content";
 import Layout from "../components/Layout";
+import NextHead from "../components/NextHead";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
           name="description"
           content="안밸포퍼 포트폴리오 | Anveloper portfolio"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <Content />
     </Layout>
