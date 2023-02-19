@@ -1,7 +1,7 @@
 name: FE CI/CD Docker
 on:
   push:
-    branches: [main]
+    branches: [main, frontend]
 env:
   DOCKER_IMAGE: ghcr.io/anveloper/anveloper-web-frontend
   VERSION: ${{ github.sha }}
