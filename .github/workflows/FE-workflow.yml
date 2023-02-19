@@ -1,15 +1,15 @@
 name: FE CI/CD Docker
 on:
   push:
-    branches: [main, frontend]
+    branches: [main]
 env:
   DOCKER_IMAGE: ghcr.io/anveloper/anveloper-web-frontend
   VERSION: ${{ github.sha }}
-  NAME: selectool-web-frontend
+  NAME: anveloper-web-frontend
 jobs:
   build:
     name: Build
-    runs-on: unbuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Set up docker buildx
