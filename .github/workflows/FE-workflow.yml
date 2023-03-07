@@ -35,7 +35,7 @@ jobs:
           context: .
           builder: ${{ steps.buildx.outputs.name }}
           file: FEDockerfile
-          push: true 
+          push: true
           tags: ${{ env.DOCKER_IMAGE }}:latest
   deploy:
     needs: build
