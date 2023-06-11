@@ -13,10 +13,17 @@ import ProjectList from "components/ProjectList";
 import Projects from "pages/Projects";
 
 import styles from "styles/App.module.css";
+import Demo from "./Demo";
+import Mug from "components/Mug";
+import Card from "components/Card";
 
 const router = createBrowserRouter([
   {
     path: "",
+    element: <>{"⚒️ 공사중 🛠️"}</>,
+  },
+  {
+    path: "t",
     element: (
       <div className={styles.container}>
         <Header />
@@ -39,6 +46,14 @@ const router = createBrowserRouter([
         path: ":projectId",
         element: <ProjectDetail />,
       },
+    ],
+  },
+  {
+    path: "demo",
+    element: <Demo />,
+    children: [
+      { path: "mug", element: <Mug /> },
+      { path: "card", element: <Card /> },
     ],
   },
 ]);
